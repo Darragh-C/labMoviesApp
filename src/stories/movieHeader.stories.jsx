@@ -1,5 +1,5 @@
 import React from "react";
-import MovieHeader from "../components/headerMovie";
+import MovieHeader from "../components/MovieHeader";
 import SampleMovie from "./sampleData";
 
 export default {

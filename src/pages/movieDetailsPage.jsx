@@ -1,6 +1,6 @@
 import React, {useState, useEffect}  from "react";
 import { useParams } from "react-router-dom";
-import MovieHeader from "../components/headerMovie/";
+import MovieHeader from "../components/MovieHeader";
 import MovieDetails from "../components/movieDetails/";
 import Grid from "@mui/material/Grid";
 import ImageList from "@mui/material/ImageList";
@@ -34,6 +34,10 @@ const MoviePage = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // console.log(`MOVIE:`);
+  // for (const [prop, value] of Object.entries(movie)) {
+  //   console.log(`${prop}: ${value}`);
+  // }
 
   return (
     <>

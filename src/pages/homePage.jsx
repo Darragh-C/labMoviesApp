@@ -8,6 +8,13 @@ const HomePage = (props) => {
   const favourites = movies.filter(m => m.favourite)
   localStorage.setItem('favourites', JSON.stringify(favourites))
 
+  for (const obj of favourites) {
+    for (const [prop, value] of Object.entries(obj)) {
+      console.log(`${prop}: ${value}`);
+    }
+    console.log('---'); // Separate each object with a line
+  }
+
   const addToFavourites = (movieId) => {
     const updatedMovies = movies.map((m) =>
       m.id === movieId ? { ...m, favourite: true } : m
