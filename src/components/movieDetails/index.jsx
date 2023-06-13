@@ -32,8 +32,7 @@ const styles = {
 };
 
 const MovieDetails = ( {movie}) => {
-  const [drawerOpen, setDrawerOpen] = useState(false); // New
-
+  const [drawerOpen, setDrawerOpen] = useState(false); 
   return (
     <>
       <Typography variant="h5" component="h3">
@@ -44,28 +43,7 @@ const MovieDetails = ( {movie}) => {
         {movie.overview}
       </Typography>
 
-      <Paper component="ul" sx={styles.chipSet}>
-        <li>
-          <Chip label="Genres" sx={styles.chipLabel} color="primary" />
-        </li>
-        {movie.genres.map((g) => (
-          <li key={g.name}>
-            <Chip label={g.name}  />
-          </li>
-        ))}
-      </Paper>
-      <Paper component="ul" sx={styles.chipSet}>
-        <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} />
-        <Chip
-          icon={<MonetizationIcon />}
-          label={`${movie.revenue.toLocaleString()}`}
-        />
-        <Chip
-          icon={<StarRate />}
-          label={`${movie.vote_average} (${movie.vote_count}`}
-        />
-        <Chip label={`Released: ${movie.release_date}`} />
-      </Paper>
+
       <Fab    
         color="secondary"
         variant="extended"
