@@ -43,7 +43,34 @@ const MovieDetails = ( {movie}) => {
         {movie.overview}
       </Typography>
 
-
+      {movie.genres && movie.genres.every((g) => g.name) && (
+        <Paper component="ul" sx={styles.chipSet}>
+          <li>
+            <Chip label="Genres" sx={styles.chipLabel} color="primary" />
+          </li>
+          {movie.genres.map((g) => (
+            <li key={g.name}>
+              <Chip label={g.name} />
+            </li>
+          ))}
+        </Paper>
+      )}
+      <Paper component="ul" sx={styles.chipSet}>
+        {movie.runtime && (
+          <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} />
+        )}
+        {movie.revenue && (
+          <Chip
+            icon={<MonetizationIcon />}
+            label={`${movie.revenue.toLocaleString()}`}
+          />
+        )}
+        <Chip
+          icon={<StarRate />}
+          label={`${movie.vote_average} (${movie.vote_count}`}
+        />
+        <Chip label={`Released: ${movie.release_date}`} />
+      </Paper>
       <Fab    
         color="secondary"
         variant="extended"

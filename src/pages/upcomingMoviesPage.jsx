@@ -8,12 +8,12 @@ const UpcomingMoviesPage = (props) => {
   const favourites = movies.filter(m => m.favourite)
   localStorage.setItem('favourites', JSON.stringify(favourites))
 
-  for (const obj of movies) {
-    for (const [prop, value] of Object.entries(obj)) {
-      console.log(`${prop}: ${value}`);
-    }
-    console.log('---'); 
-  }
+  // for (const obj of movies) {
+  //   for (const [prop, value] of Object.entries(obj)) {
+  //     console.log(`${prop}: ${value}`);
+  //   }
+  //   console.log('---'); 
+  // }
 
   const addToFavourites = (movieId) => {
     const updatedMovies = movies.map((m) =>
@@ -31,7 +31,7 @@ const UpcomingMoviesPage = (props) => {
 
   return (
     <PageTemplate
-      title='Discover Movies'
+      title='Upcoming Movies'
       movies={movies}
       selectFavourite={addToFavourites}
     />

@@ -3,7 +3,10 @@ export const getMovies = () => {
     `https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&include_adult=false&page=1`
   )
     .then(res => res.json())
-    .then(json => json.results);
+    .then(json => {
+      console.log(`Movies: ${json.results}`);
+      return json.results
+    });
 };
 
 export const getMovie = id => {
@@ -27,7 +30,10 @@ export const getMovieImages = (id) => {
     `https://api.themoviedb.org/3/movie/${id}/images?api_key=${import.meta.env.VITE_TMDB_KEY}`
   )
     .then((res) => res.json())
-    .then((json) => json.posters);
+    .then((json) => {
+      console.log(`Fetched posters: ${json.posters}`);
+      return json.posters
+    });
 };
 
 export const getMovieReviews = (id) => {
@@ -46,6 +52,9 @@ export const getUpcomingMovies = () => {
     `https://api.themoviedb.org/3/movie/upcoming?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&page=1`
   )
     .then(res => res.json())
-    .then(json => json.results);
+    .then(json => {
+      console.log(`Upcoming movies: ${json.results}`);
+      return json.results
+    });
 };
 
