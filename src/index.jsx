@@ -11,6 +11,8 @@ import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader';
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import MoviesContextProvider from "./contexts/moviesContext";
+import AddMovieReviewPage from './pages/addMovieReviewPage'
+
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,6 +33,7 @@ const App = () => {
         <SiteHeader />
         <MoviesContextProvider>
           <Routes>
+            <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
             <Route path="/movies/upcoming" element={<UpcomingMoviesPage/>} />
             <Route path="/reviews/:id" element={<MovieReviewPage/>} />
             <Route path="/movies/favourites" element={<FavouriteMoviesPage />} />
