@@ -6,6 +6,7 @@ import Spinner from "../components/spinner";
 import AddToPlaytistIcon from '../components/cardIcons/addToPlaytistIcon'
 
 const UpcomingMoviesPage = (props) => {
+  //browser cache of upcoming movies
   const { data, error, isLoading, isError } = useQuery("upcoming", getUpcomingMovies);
 
   if (isLoading) {
